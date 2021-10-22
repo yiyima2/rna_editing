@@ -9,7 +9,6 @@ ID=$3
 PL=$4
 PU=$5
 
-source /mnt/mfs/cluster/bin/HgrcPathSetup.sh
 
 ref="${dir}/GRCh38.primary_assembly.genome.fa"
 
