@@ -2,7 +2,6 @@
 #$ -cwd
 #$ -S /bin/bash
 #$ -j y
-source /mnt/mfs/cluster/bin/HgrcPathSetup.sh
 
 input=$1
 dir=$2
