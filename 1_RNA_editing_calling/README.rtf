@@ -16,15 +16,9 @@ The system needs to also downloaded the reference files of the genome sequence a
 2. Installation guide\
 No need for installation and these are bash scripts to be executed directly in Linux system.\
 \
-3. Demo\
-We have provided the example output files in the directory of \'93example_output\'94, which contains the main output .vcf file of \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out.vcf.gz\'94 and its index file of \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out.vcf.gz.tbi\'94.\
-\
 In order to get this output file, you need to download the following files: \
 (1) The input RNA-seq .bam file of \'93
-\fs22 \cf2 \cb3 \CocoaLigature0 hB_RNA_10622.accepted_hits.sort.coordAligned.out.bam\'94 from 
-\fs24 \cf0 \cb1 \CocoaLigature1 https://www.synapse.org/#!Synapse:
-\fs22 \cf2 \cb3 \CocoaLigature0 syn8593350
-\fs24 \cf0 \cb1 \CocoaLigature1 \
+\fs22 \cf2 \cb3 \CocoaLigature0 example.bam\'94 from 
 (2) The genome reference file of \'93GRCh38.primary_assembly.genome.fa\'94 from http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/GENCODE/GRCh38_Gencode24\
 (3) The genetic variants reference file (dbSNP) of \'93
 \f1\fs22 \cf2 \cb3 \CocoaLigature0 dbsnp_138.hg38.vcf.gz\'94 from GATK Resource following the guidance provided by https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle.
@@ -32,14 +26,14 @@ In order to get this output file, you need to download the following files: \
 \
 4. Instruction for use (Example how to run each of the script)\
 At the step 1, run the code of: ./s1_sort_split.sh directory_name 
-\fs22 \cf2 \cb3 \CocoaLigature0 hB_RNA_10622.accepted_hits.sort.coordAligned.out hB_RNA_10622 ILLUMINA HiSeq2500\
-The output file of step 1 are \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out_splitted.bam\'94 (size=506Mb) and its index file of \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out_splitted.bai\'94 (size=4.9Mb), which are not provided.\
+\fs22 \cf2 \cb3 \CocoaLigature0 example.out sampleName ILLUMINA HiSeq2500\
+The output file of step 1 are \'93example.out_splitted.bam\'94 (size=506Mb) and its index file of \'93example.out_splitted.bai\'94 (size=4.9Mb), which are not provided.\
 
 \fs24 \cf0 \cb1 \CocoaLigature1 \
 At the step 2, run the code of: ./s2_varCall.sh 
-\fs22 \cf2 \cb3 \CocoaLigature0 hB_RNA_10622.accepted_hits.sort.coordAligned.out directory_name \
+\fs22 \cf2 \cb3 \CocoaLigature0 example.out directory_name \
 The output file of step 2 are the provided file of 
-\fs24 \cf0 \cb1 \CocoaLigature1 \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out.vcf.gz\'94 and its index file of \'93hB_RNA_10622.accepted_hits.sort.coordAligned.out.vcf.gz.tbi\'94.\
+\fs24 \cf0 \cb1 \CocoaLigature1 \'93example.out.vcf.gz\'94 and its index file of \'93example.out.vcf.gz.tbi\'94.\
 \
 Note: \
 (1) Install all the required softwares and the downloaded reference files and input files into the same directory, and the name of the directory should be input as the argument of \'93directory_name\'94 for the scripts.\
